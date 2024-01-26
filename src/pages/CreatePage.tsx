@@ -27,7 +27,8 @@ const CreatePage: React.FC = () => {
 
   const handleSubmit = (values: any) => {
     createItem(values)
-      .then(() => {
+      .then((res) => {
+        console.log('res :>> ', JSON.stringify(res?.data));
         navigate("/");
       })
       .catch((error) => console.error("Error creating post:", error));
